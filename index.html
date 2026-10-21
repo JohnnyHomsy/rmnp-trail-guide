@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RMNP Trail Guide &amp; Permit Request</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- skip navigation: drops down from the top on keyboard focus -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="container">
+
+  <header>
+    <h1>
+      <span class="material-symbols-outlined" aria-hidden="true">hiking</span>
+      Rocky Mountain National Park Trail Guide
+    </h1>
+    <p>Day-hike distances, elevation gain, and timed-entry permit requests for the
+       Bear Lake and Longs Peak corridors.</p>
+  </header>
+
+  <nav>
+    <h2 class="sr-only">Main navigation</h2>
+    <ul>
+      <li><a href="#trails">Trail comparison</a></li>
+      <li><a href="#conditions">Conditions and safety</a></li>
+      <li><a href="#permit">Permit request</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+
+    <section id="trails">
+      <h2>Trail comparison</h2>
+      <p>
+        <abbr title="Rocky Mountain National Park">RMNP</abbr> maintains roughly 355 miles
+        of trail. <dfn>Elevation gain</dfn> is the total vertical climb from trailhead to
+        destination, which matters more than distance when you are starting above 9,000 feet.
+      </p>
+
+      <table>
+        <caption>Popular day hikes by distance, elevation gain, and difficulty</caption>
+        <thead>
+          <tr>
+            <th scope="col">Trail</th>
+            <th scope="col">Trailhead</th>
+            <th scope="col">Round trip (miles)</th>
+            <th scope="col">Elevation gain (feet)</th>
+            <th scope="col">Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Bear Lake Nature Trail</th>
+            <td>Bear Lake</td><td>0.8</td><td>45</td><td>Easy</td>
+          </tr>
+          <tr>
+            <th scope="row">Alberta Falls</th>
+            <td>Glacier Gorge</td><td>1.6</td><td>160</td><td>Easy</td>
+          </tr>
+          <tr>
+            <th scope="row">Emerald Lake</th>
+            <td>Bear Lake</td><td>3.6</td><td>771</td><td>Moderate</td>
+          </tr>
+          <tr>
+            <th scope="row">Sky Pond</th>
+            <td>Glacier Gorge</td><td>9.0</td><td>1,780</td><td>Strenuous</td>
+          </tr>
+          <tr>
+            <th scope="row">Chasm Lake</th>
+            <td>Longs Peak</td><td>8.4</td><td>2,500</td><td>Strenuous</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <details>
+        <summary>How these numbers were measured</summary>
+        <p>Distances are round trip from the listed trailhead. Figures come from the
+           National Park Service trail pages; third-party guides often report different
+           totals because they measure from overflow parking.</p>
+      </details>
+    </section>
+
+    <section id="conditions">
+      <h2>Conditions and safety</h2>
+      <p>
+        Afternoon thunderstorms build fast above treeline in summer.
+        <mark>Plan to be below treeline by noon.</mark> The park's own guidance is blunt
+        about it:
+      </p>
+      <blockquote cite="https://www.nps.gov/thingstodo/romo_emeraldlake.htm">
+        <p>As a rule of thumb, try to be back at the trailhead by noon.</p>
+        <footer>— <cite>Emerald Lake, National Park Service</cite></footer>
+      </blockquote>
+      <p>Pets are prohibited on all trails, tundra, and meadows inside the park.</p>
+
+      <aside>
+        <h3>
+          <span class="material-symbols-outlined" aria-hidden="true">confirmation_number</span>
+          Timed entry
+        </h3>
+        <p>Bear Lake Road destinations require a timed-entry permit in addition to park
+           admission during peak season. Reservations open on
+           <time datetime="2026-05-01">May 1, 2026</time>.</p>
+      </aside>
+    </section>
+
+    <section id="permit">
+      <h2>Permit request</h2>
+      <p id="form-intro">All fields marked required must be completed. This is a class
+         exercise and no data is submitted anywhere.</p>
+
+      <form action="#" method="post" aria-describedby="form-intro">
+
+        <fieldset>
+          <legend>Visitor information</legend>
+
+          <p class="field">
+            <label for="full-name">Full name (required)</label>
+            <input type="text" id="full-name" name="full-name" autocomplete="name" required>
+          </p>
+
+          <p class="field">
+            <label for="email">Email address (required)</label>
+            <input type="email" id="email" name="email" autocomplete="email"
+                   aria-describedby="email-hint" required>
+            <span class="hint" id="email-hint">Your permit confirmation is sent here.</span>
+          </p>
+
+          <p class="field">
+            <label for="phone">Phone number (optional)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel"
+                   aria-describedby="phone-hint">
+            <span class="hint" id="phone-hint">Used only for closure alerts.</span>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Trip details</legend>
+
+          <p class="field">
+            <label for="visit-date">Date of visit (required)</label>
+            <input type="date" id="visit-date" name="visit-date" required>
+          </p>
+
+          <p class="field">
+            <label for="trailhead">Trailhead (required)</label>
+            <select id="trailhead" name="trailhead" required>
+              <option value="">Choose a trailhead</option>
+              <option value="bear-lake">Bear Lake</option>
+              <option value="glacier-gorge">Glacier Gorge</option>
+              <option value="longs-peak">Longs Peak</option>
+            </select>
+          </p>
+
+          <p class="field">
+            <label for="party-size">Party size (required)</label>
+            <input type="number" id="party-size" name="party-size" min="1" max="12"
+                   value="1" aria-describedby="party-hint" required>
+            <span class="hint" id="party-hint">Maximum 12 people per permit.</span>
+          </p>
+
+          <fieldset class="radio-group">
+            <legend>Entry window</legend>
+            <p class="choice">
+              <input type="radio" id="window-early" name="entry-window" value="early" checked>
+              <label for="window-early">5:00 a.m. to 9:00 a.m.</label>
+            </p>
+            <p class="choice">
+              <input type="radio" id="window-mid" name="entry-window" value="mid">
+              <label for="window-mid">9:00 a.m. to 1:00 p.m.</label>
+            </p>
+            <p class="choice">
+              <input type="radio" id="window-late" name="entry-window" value="late">
+              <label for="window-late">1:00 p.m. to 5:00 p.m.</label>
+            </p>
+          </fieldset>
+
+          <p class="choice">
+            <input type="checkbox" id="accessible-parking" name="accessible-parking">
+            <label for="accessible-parking">I need accessible parking at the trailhead</label>
+          </p>
+        </fieldset>
+
+        <p class="field">
+          <label for="notes">Additional notes (optional)</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </p>
+
+        <button type="submit">
+          <span class="material-symbols-outlined" aria-hidden="true">send</span>
+          Submit request
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <aside>
+    <h2>Related park resources</h2>
+    <ul>
+      <li><a href="https://www.nps.gov/romo/planyourvisit/timed-entry-permit-system.htm">Timed entry permit system</a></li>
+      <li><a href="https://www.nps.gov/romo/planyourvisit/hiking.htm">Hiking in Rocky</a></li>
+    </ul>
+  </aside>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <address>
+      Rocky Mountain National Park<br>
+      1000 US Hwy 36, Estes Park, CO 80517<br>
+      <a href="tel:+19705861206">(970) 586-1206</a>
+    </address>
+    <p>Content adapted from <a href="https://www.nps.gov/romo/">nps.gov</a>.
+       Built as a class exercise by Johnny Homsy.</p>
+    <p><small>Last updated <time datetime="2026-10-21">October 21, 2026</time></small></p>
+  </footer>
+
+</div>
+</body>
+</html>
